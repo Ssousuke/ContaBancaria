@@ -1,4 +1,5 @@
 ﻿using System.Globalization;
+
 namespace ContaBancaria
 {
     class Program
@@ -17,7 +18,7 @@ namespace ContaBancaria
 
             if (resp == 's' || resp == 'S')
             {
-                Console.WriteLine("Qual valor deseja depositar? ");
+                Console.Write("Qual valor deseja depositar? ");
                 double valor = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
                 conta = new Conta(numero, nome, valor);
             }
@@ -29,6 +30,18 @@ namespace ContaBancaria
             {
                 Console.WriteLine("Responsta incorreta.");
             }
+
+            Console.WriteLine(conta.ToString());
+
+            Console.Write("Depositar: ");
+            double deposito = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+            conta.Desposito(deposito);
+
+            Console.Write("Sacar: ");
+            double saque = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+            conta.Saque(saque);
 
             Console.WriteLine(conta.ToString());
         }
