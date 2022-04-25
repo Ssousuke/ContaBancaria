@@ -5,7 +5,7 @@ namespace ContaBancaria
     {
         static void Main(string[] args)
         {
-            Conta conta;
+            Conta conta = new Conta();
             Console.Write("Entre com o número da conta: ");
             int numero = int.Parse(Console.ReadLine());
 
@@ -27,9 +27,10 @@ namespace ContaBancaria
             }
             else
             {
-                Console.WriteLine("Responsa incorreta.");
+                Console.WriteLine("Responsta incorreta.");
             }
-            conta.ToString();
+
+            Console.WriteLine(conta.ToString());
         }
     }
 }
